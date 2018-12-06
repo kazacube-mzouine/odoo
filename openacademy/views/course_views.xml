@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <!--course views/filters-->
+    <record model="ir.ui.view" id="course_tree_view">
+      <field name="name">openacademy.tree</field>
+      <field name="model">course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="desc"/>
+        </tree>
+      </field>
+    </record>
+          <record model="ir.ui.view" id="course_form_view">
+      <field name="name">openacademy.form</field>
+      <field name="model">course</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="session_ids"/>
+                </group>
+                <notebook>
+                    <page name="description" string="Description">
+                    <field name="desc"/>
+
+                    </page>
+                </notebook>
+
+            </sheet>
+        </form>
+      </field>
+    </record>
+      <record id="view_course_filter" model="ir.ui.view">
+            <field name="name">course.search</field>
+            <field name="model">course</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <search string="Rechrerche cours">
+                    <field name="name" string="Titre"/>
+                    <field name="desc"/>
+                </search>
+            </field>
+        </record>
+
+      <!--session views-->
+      <record model="ir.ui.view" id="session_tree_view">
+      <field name="name">session.tree</field>
+      <field name="model">session</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_date"/>
+            <field name="duration"/>
+            <field name="number_of_seats"/>
+        </tree>
+      </field>
+    </record>
+          <record model="ir.ui.view" id="session_form_view">
+      <field name="name">session.form</field>
+      <field name="model">session</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="duration"/>
+                    <field name="number_of_seats"/>
+                    <field name="seats_occupied"/>
+                    <field name="occupation_ratio" widget="progressbar"/>
+
+                </group>
+                <group>
+                    <field name="instructor_id" domain="[('instructor','=',True)]"/>
+                    <field name="course_id"/>
+                    <field name="attendee_ids"/>
+
+                </group>
+
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+       <!--partner inherit view form-->
+    <record id="partner_inherit_view_form" model="ir.ui.view">
+        <field name="name">partner inherit view form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="instructor" />
+                <field name="session_ids"/>
+            </xpath>
+        </field>
+    </record>
+      <record model="ir.ui.view" id="partner_tree_view">
+      <field name="name">partner.tree</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!--actions & menus-->
+    <record model="ir.actions.act_window" id="openacademy_action">
+      <field name="name">Courses</field>
+      <field name="res_model">course</field>
+      <field name="view_typee">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="course_tree_view"/>
+    </record>
+      <record model="ir.actions.act_window" id="session_action">
+      <field name="name">Sessions</field>
+      <field name="res_model">session</field>
+      <field name="view_typee">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="session_tree_view"/>
+    </record>
+       <record model="ir.actions.act_window" id="partner_action">
+      <field name="name">Partners</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_typee">tree</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="partner_tree_view"/>
+    </record>
+
+
+
+
+
+    <menuitem name="Openacademy" id="course_menu_root"/>
+    <menuitem name="Courses" id="cours_menu" parent="course_menu_root"/>
+    <menuitem name="Courses" id="cours_menu1" parent="cours_menu"
+              action="openacademy_action"/>
+    <menuitem name="Sessions" id="session_menu" parent="cours_menu"
+              action="session_action"/>
+    <menuitem name="Partner" id="partner_menu" parent="cours_menu"
+              action="partner_action"/>
+
+  </data>
+</odoo>

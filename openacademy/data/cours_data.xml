@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model = "course" id="open_cours_data1">
+            <field name="name">Mathématique</field>
+            <field name="desc">un exemple de cours</field>
+        </record>
+        <record model = "course" id="open_cours_data2">
+            <field name="name">Physique</field>
+            <field name="desc">un exemple de cours</field>
+        </record>
+        <record model = "course" id="open_cours_data3">
+            <field name="name">Informatique</field>
+            <field name="desc">Developpement et analyse</field>
+        </record>
+        <record model = "course" id="open_cours_data3">
+            <field name="name">Gestion de projet</field>
+            <field name="desc">description</field>
+        </record>
+    </data>
+</odoo>

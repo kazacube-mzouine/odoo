@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* openacademy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-12 14:23+0000\n"
+"PO-Revision-Date: 2017-10-12 14:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openacademy
+#: model:ir.ui.menu,name:openacademy.cours_menu
+#: model:ir.ui.menu,name:openacademy.cours_menu1
+msgid "Courses"
+msgstr "Cours"
+
+#. module: openacademy
+#: field:course,create_uid:0
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: openacademy
+#: field:course,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: openacademy
+#: view:course:openacademy.course_form_view
+#: field:course,desc:0
+msgid "Description"
+msgstr "Description"
+
+#. module: openacademy
+#: field:course,display_name:0
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: openacademy
+#: field:course,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: openacademy
+#: field:course,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: openacademy
+#: field:course,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: openacademy
+#: field:course,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: openacademy
+#: model:ir.actions.act_window,name:openacademy.openacademy_action
+msgid "Courses"
+msgstr "Cours"
+
+#. module: openacademy
+#: view:course:openacademy.view_course_filter
+msgid "Rechrerche cours"
+msgstr "Rechrerche cours"
+
+#. module: openacademy
+#: field:course,name:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: openacademy
+#: view:course:openacademy.view_course_filter
+msgid "Titre"
+msgstr "Titre"
+
+#. module: openacademy
+#: model:ir.ui.menu,name:openacademy.course_menu_root
+msgid "Openacademy"
+msgstr "Openacademy"
+
