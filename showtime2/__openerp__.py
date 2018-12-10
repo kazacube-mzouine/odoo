@@ -3,8 +3,6 @@
 {
     'name': 'showtime2',
     'version': '9.0.1.0.1',
-    'currency': 'EUR',
-    'price' : 58,
     'category': 'Tools',
     'author': "showtime",
     'website': 'https://github.com/showtime',
