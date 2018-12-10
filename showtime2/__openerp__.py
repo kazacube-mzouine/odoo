@@ -2,7 +2,7 @@
 
 {
     'name': 'showtime2',
-    'image': ['images/kzc.png'],
+    'images': ['images/kzc.png'],
     'version': '9.0.1.0.1',
     'category': 'Tools',
     'author': "showtime",
